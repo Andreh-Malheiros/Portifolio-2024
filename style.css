@@ -1,0 +1,1057 @@
+html {
+
+    box-sizing: border-box;
+    --bgColorMenu: #1d1d27;
+    --duration: .7s;
+}
+
+html *,
+html *::before,
+html *::after {
+    font-family: "Inter", sans-serif !important;
+    box-sizing: inherit;
+
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 400vh;
+    align-items: center;
+    background-color: #ffb457;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color var(--duration);
+
+}
+
+.menu {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* Works well with 100% width  */
+    width: 2em;
+    height: 100vh;
+    font-size: 1.5em;
+    padding: 0 2.85em;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bgColorMenu);
+    margin-left: -93%;
+    top: 0;
+
+}
+
+.menu__item {
+
+    all: unset;
+    flex-grow: 1;
+    z-index: 100;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50%;
+    align-items: center;
+    will-change: transform;
+    justify-content: center;
+    padding: 0.55em 0 0.85em;
+    transition: transform var(--timeOut, var(--duration));
+}
+
+.menu__item::before {
+
+    content: "";
+    z-index: -1;
+    width: 4.2em;
+    height: 4.2em;
+    border-radius: 50%;
+    position: absolute;
+    transform: scale(1);
+    transition: background-color var(--duration), transform var(--duration);
+
+}
+
+
+.menu__item.active {
+
+    transform: translate3d(0, 0, .8em);
+}
+
+.menu__item.active::before {
+
+    transform: scale(1);
+    background-color: var(--bgColorItem);
+
+}
+
+.icon {
+
+    width: 2.6em;
+    height: 2.6em;
+    stroke: white;
+    fill: transparent;
+    stroke-width: 1pt;
+    stroke-miterlimit: 10;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 400;
+
+}
+
+.menu__item.active .icon {
+
+    animation: strok 1.5s reverse;
+
+}
+
+@keyframes strok {
+
+    100% {
+
+        stroke-dashoffset: 400;
+
+    }
+
+}
+
+.menu__border {
+
+
+
+    width: 1em;
+    height: 2.4em;
+    position: absolute;
+    clip-path: url(#menu);
+    will-change: transform;
+    background-color: var(--bgColorMenu);
+    transition: transform var(--timeOut, var(--duration));
+
+}
+
+.svg-container {
+
+    width: 0;
+    height: 0;
+}
+
+
+@media screen and (max-width: 50em) {
+    .menu {
+        font-size: .8em;
+    }
+}
+
+a {
+    width: 6vw;
+    height: 10vh;
+    position: absolute;
+    border-radius: 30em;
+}
+
+#midpage {
+    width: 60vw;
+    height: 70vh;
+    display: flex;
+    margin-top: 10rem;
+}
+
+#imagem {
+    background-color: white;
+    width: 20vw;
+    height: 70vh;
+    border-radius: .8rem;
+    overflow: hidden;
+
+}
+
+#linha {
+    margin-top: 5rem;
+    background-color: black;
+    height: 0.1px;
+    width: 100%;
+}
+
+#textos {
+    width: 40vw;
+    margin-left: 3rem;
+    line-height: 4rem;
+}
+
+#textos2 {
+    width: 40vw;
+    margin-left: 10em;
+    ;
+}
+
+#tituloMidPage {
+
+    font-weight: 300;
+    font-size: 65px;
+    transition: 0.8s;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid;
+    /* Simula o cursor */
+    width: 0;
+    /* Come�ar com a largura zero */
+    display: inline-block;
+    /* Permite a altera��o de largura */
+    animation:
+        typing 2s steps(14) forwards,
+        /* Adiciona a anima��o de digita��o */
+        cursor 0.5s step-end infinite alternate;
+    /* Anima��o do cursor */
+    animation-delay: 0, 4s;
+    /* Atraso para a anima��o do cursor */
+    animation-iteration-count: infinite, infinite;
+    /* Anima��es infinitas */
+    animation-fill-mode: forwards, forwards;
+    /* Manter o estado final da anima��o de digita��o */
+}
+
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+
+    /* Faz o cursor piscar */
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    /* Come�a com largura 0 */
+    to {
+        width: 90.6%;
+    }
+
+    /* Expande at� o tamanho total do texto */
+}
+
+
+#midPageTitulo {
+    text-decoration: underline;
+    font-weight: 300;
+    font-size: 69px;
+    transition: .8s;
+    line-height: 5rem;
+    text-align: center;
+}
+
+h6 {
+    font-size: 35px;
+    line-height: 3rem;
+    font-weight: 300;
+    margin-top: 10%;
+    transition: .8s;
+}
+
+h4 {
+    font-size: 33px;
+    line-height: 3rem;
+    font-weight: 300;
+    transition: .8s;
+}
+
+h5 {
+    font-size: 25px;
+    line-height: 2rem;
+    font-weight: 300;
+    transition: .8s;
+    margin-top: -3rem;
+}
+
+
+#portifolio {
+    background: linear-gradient(35deg, #d0923b, #8e66da);
+    font-weight: bold;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+#perfils {
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+
+    align-items: center;
+
+}
+
+#fotoPerfil {
+    height: 43vh;
+    width: 22vw;
+    margin-left: 5rem;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 7rem 3rem 6rem 3rem;
+}
+
+.box-blur {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(WhatsApp\ Image\ 2024-09-25\ at\ 8.27.49\ PM.jpeg);
+    border-radius: 7rem 3rem 6rem 3rem;
+    transition: filter, transform .4s;
+}
+
+
+
+#fotoPerfil:hover .box-blur {
+    filter: blur(1px);
+    transform: scale(1.1);
+}
+
+.box-size {
+    height: 20vh;
+    width: 14vw;
+    background-color: black;
+    border-radius: 3.5rem 1.5rem 3rem 2rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.blur-box {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(Print-Delivery.png);
+    transition: filter, transform .4s;
+}
+
+.blur-box1 {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(Print-TabelaPeriodica.png);
+    transition: filter, transform .4s;
+}
+
+.blur-box2 {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(Print-SiteOrganicos.png);
+    transition: filter, transform .4s;
+}
+
+
+.box-size:hover .blur-box,
+.box-size:hover .blur-box1,
+.box-size:hover .blur-box2 {
+    filter: blur(1px);
+    transform: scale(1.1);
+}
+
+
+#nomeFotoPerfil {
+    text-align: center;
+    font-size: 4.5rem;
+    margin-left: 3em;
+    text-decoration: underline .3rem;
+    text-shadow: white 3px 2px 10px;
+    position: absolute;
+}
+
+#midPageTitulo {
+    transition: .8s;
+    will-change: transform;
+}
+
+span {
+    transition: .2s;
+}
+
+#midPageTitulo:hover {
+    scale: 1.2;
+
+}
+
+#midPageTitulo:hover>span {
+    background: linear-gradient(35deg, #d0923b, #8e66da);
+    font-weight: bold;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#midPageTitulo:hover #midPageDesc:not(:hover) {
+    scale: .8;
+}
+
+#midPageDesc {
+    transition: .8s;
+    text-align: center;
+}
+
+#midPageDesc:hover {
+    scale: 1.2;
+}
+
+#midPageDesc:hover>span {
+    background: linear-gradient(35deg, #d0923b, #8e66da);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#midPageLegenda {
+    transition: .8s;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#midPageLegenda:hover {
+    scale: 1.2;
+}
+
+#midPageLegenda:hover>span {
+    background: linear-gradient(30deg, #d0923b, #8e66da);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#contacts {
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5rem;
+}
+
+#TextEntreEmContato {
+    font-size: 4rem;
+}
+
+#TextEntreEmContato>span {
+    color: #6100C2;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+#Cartoes {
+    height: 80vh;
+    width: 80vw;
+    display: flex;
+    justify-content: space-evenly;
+    transition: .5s;
+    transform-style: preserve-3d;
+}
+
+
+.Cards {
+    margin-top: 1.5rem;
+    height: 80vh;
+    width: 23vw;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-shadow: -3px 4px 8px 8px;
+    transition: 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.Cards:hover {
+    scale: 1;
+}
+
+.Cartoes .Cards:hover .botaoCartoes {
+    transform: translate3d(0, 0, 100px);
+}
+
+
+#linkedin {
+    background-color: #A894DC
+}
+
+.TituloCartoes {
+    font-size: 4rem;
+    color: white;
+    transform-style: preserve-3d;
+}
+
+
+svg {
+    transition: .5s;
+}
+
+.botaoCartoes {
+    width: 15vw;
+    height: 9vh;
+    border-radius: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 2rem;
+    cursor: pointer;
+    transform-style: preserve-3d;
+}
+
+.botaoCartoes>button {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    font-weight: 500;
+    font-size: 2rem;
+    background-color: transparent;
+    color: white;
+    transform-style: preserve-3d;
+    transition: .5s;
+}
+
+.colorSVG {
+    transform: translate3d(0, 0, 100px);
+    transform-style: preserve-3d;
+}
+
+.area-1,
+#imagem,
+#Cartoes {
+    visibility: hidden;
+}
+
+.overlay {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1d1d27;
+    width: 130%;
+    height: 130%;
+    opacity: 0.5;
+    border-radius: 1rem;
+}
+
+.video {
+    border-radius: 1rem;
+    margin-left: -2em;
+}
+
+#perfil {
+    margin-top: 10em;
+}
+
+#projects {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 2em;
+}
+
+#conhecimentos {
+    width: 80vw;
+    height: 25%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#cardsProjects {
+    width: 80vw;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.ProjectsCards {
+    height: 100%;
+    width: 20vw;
+    border-radius: 1rem 3rem 0rem 3rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 1;
+    opacity: 1;
+}
+
+.quadrados {
+    width: 18vw;
+    height: 23vh;
+    background-color: transparent;
+    border-radius: 0px 3rem 1rem 3rem;
+    border: solid 2px;
+    box-shadow: 4px 3px 3px 6px;
+    text-align: center;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-direction: column;
+    font-weight: bolder;
+    transition: .5s;
+}
+
+.quadrados:hover {
+    scale: 1.1;
+}
+
+.Acesso {
+    width: 12vw;
+    height: 8vh;
+    background-color: transparent;
+}
+
+.blur-box>button,
+.blur-box1>button,
+.blur-box2>button {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blur-box>button>a {
+    width: 13.6vw;
+    height: 19vh;
+}
+
+.TextDescritivoSite {
+    text-align: center;
+    font-weight: 300;
+}
+
+
+
+#rodape {
+    width: 95vw;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-self: self-end;
+
+}
+
+.overlay2 {
+    overflow: hidden;
+    position: absolute;
+    background-color: #1d1d27;
+    width: 92.2vw;
+    height: 25vh;
+    opacity: .4;
+}
+
+.conteudos {
+    width: 100%;
+    height: 35vh;
+    background-color: #A894DC;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+
+.contact-form {
+    width: 40vw;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.contact-form .form-control {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1px solid #cfd8dc;
+    transition: .2s ease;
+    font-weight: bold;
+    width: 15vw;
+}
+
+.contact-form .form-control:focus {
+    transition: .2s ease;
+    border-bottom: 1px solid #2abfcc;
+}
+
+.contact-main .contact-main-title h2 {
+    margin-top: 0;
+}
+
+.contact-form .send-msg {
+    color: #2abfcc;
+    border: 1px solid #2abfcc;
+    height: 40px;
+    background-color: transparent;
+    transition: all 0.4s ease-out;
+    margin-top: 40px;
+}
+
+.send-msg {
+    width: 8vw;
+}
+
+.contact-form .send-msg:hover {
+    color: rgb(255, 196, 47);
+    border: 1px solid rgb(255, 196, 47);
+    height: 40px;
+    scale: 1.1;
+}
+
+.conteudos {
+    display: flex;
+    color: #dcf5f5;
+    align-items: center;
+    margin-top: 5em;
+}
+
+#namePortifolio {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+#primeira-parte {
+    background-color: transparent;
+    width: 20vw;
+    height: 23vh;
+    margin-left: 3em;
+    border-radius: .5em;
+    padding: .4em;
+}
+
+#textEmail {
+    line-height: 1.3rem;
+    text-align: justify;
+    font-weight: 200;
+    margin-top: 1.5em;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    border: 0.0625em solid #B8B8B8;
+    /* 1px */
+    border-radius: 10em;
+    padding: 0.3125em 0.625em;
+    /* 5px 10px */
+    margin-top: 1.2em;
+}
+
+.input-container input[type="email"] {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 0.5em;
+    /* 8px */
+    border-radius: 1.25em 0 0 1.25em;
+    /* 20px */
+    font-size: 0.875em;
+    /* 14px */
+    color: #dcf5f5;
+    background-color: transparent;
+    width: 10vw;
+}
+
+.input-container button {
+    background-color: #1a093d;
+    /* cor do círculo */
+    border: none;
+    padding: 0.625em;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container button svg {
+    width: 1.25em;
+    /* 20px */
+    height: 1.25em;
+    /* 20px */
+}
+
+#segunda-parte {
+    background-color: transparent;
+    width: 20vw;
+    height: 23vh;
+    margin-left: 3em;
+    border-radius: .5em;
+    padding: .4em;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.2em;
+
+}
+
+#paginasRodape>span,
+#SociaisRodape>span {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.PaginasList {
+    list-style-type: none;
+    padding-left: 0;
+    font-weight: 200;
+    margin-top: .3em;
+    line-height: 1.6em;
+    width: 10vw;
+}
+
+
+
+#certificados {
+    width: 20vw;
+    height: 25vh;
+    overflow: hidden;
+}
+
+#certificados>div {
+    border: none;
+}
+
+#SociaisRodape {
+    width: 10vw;
+    height: 10vw;
+    margin-left: 1.7em;
+}
+
+select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 4px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group {
+    height: 8vh;
+}
+
+.botaoCartoes>button>a {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: .4em;
+}
+
+
+
+
+#containerForm {
+    width: 40vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: start;
+    margin-left: 2em;
+    border: solid;
+    border-radius: .4em;
+    position: relative;
+}
+
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.background-img {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #2a3cad;
+    border-radius: 1em;
+    box-shadow: 0px 0px 5px #2a3cad;
+    position: relative;
+    opacity: .8;
+}
+
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: #111845a6;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgb(23, 32, 90);
+    border: 2px solid #2a3cad;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.box:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.box:hover:before {
+    left: -50%;
+    transform: skewX(-5deg);
+}
+
+
+.box .content {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 1px solid #f0a591;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(9, 0, 0, 0.5);
+
+}
+
+.box span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+
+}
+
+.box span:nth-child(1) {
+    transform: rotate(0deg);
+}
+
+.box span:nth-child(2) {
+    transform: rotate(90deg);
+}
+
+.box span:nth-child(3) {
+    transform: rotate(180deg);
+}
+
+.box span:nth-child(4) {
+    transform: rotate(270deg);
+}
+
+.box span:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #50dfdb;
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    50% {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    50.1% {
+        transform: scaleX(1);
+        transform-origin: right;
+
+    }
+
+    100% {
+        transform: scaleX(0);
+        transform-origin: right;
+
+    }
+
+
+}
+
+.PaginasList>li>a{
+    height: 2vh;
+}
+
+.gradient-border {
+    --borderWidth: 3px;
+    background-color: rgb(255, 231, 151);
+    border-radius: 1rem 3rem 0rem 3rem;
+    position: relative;
+
+  }
+  .gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+    border-radius: 1rem 3rem 0rem 3rem;
+  }
+  
+  
+  @keyframes animatedgradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }

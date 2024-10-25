@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="java.js" defer></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"
+        integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+</style>
+
+
+<body>
+    <menu class="menu">
+        <button class="menu__item active" style="--bgColorItem: #ff8c00;">
+
+            <a href="#home"></a>
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M3.8,6.6h16.4" />
+                <path d="M20.2,12.1H3.8" />
+                <path d="M3.8,17.5h16.4" />
+            </svg>
+        </button>
+
+        <button class="menu__item" style="--bgColorItem: #f54888;">
+            <a href="#perfil"></a>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="10" width="8.75"
+                viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path fill="#ffffff"
+                    d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464l349.5 0c-8.9-63.3-63.3-112-129-112l-91.4 0c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3z" />
+            </svg>
+        </button>
+
+        <button class="menu__item" style="--bgColorItem: #4343f5;">
+            <a href="#contatos"></a>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="10" width="11.25"
+                viewBox="0 0 576 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path fill="#ffffff"
+                    d="M512 80c8.8 0 16 7.2 16 16l0 320c0 8.8-7.2 16-16 16L64 432c-8.8 0-16-7.2-16-16L48 96c0-8.8 7.2-16 16-16l448 0zM64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zM208 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128zm-32 32c-44.2 0-80 35.8-80 80c0 8.8 7.2 16 16 16l192 0c8.8 0 16-7.2 16-16c0-44.2-35.8-80-80-80l-64 0zM376 144c-13.3 0-24 10.7-24 24s10.7 24 24 24l80 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-80 0zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24l80 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-80 0z" />
+            </svg>
+        </button>
+
+        <button class="menu__item" style="--bgColorItem: #e0b115;">
+            <a href="#projetos"></a>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="10" width="8.75"
+                viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path fill="#ffffff"
+                    d="M364.2 83.8c-24.4-24.4-64-24.4-88.4 0l-184 184c-42.1 42.1-42.1 110.3 0 152.4s110.3 42.1 152.4 0l152-152c10.9-10.9 28.7-10.9 39.6 0s10.9 28.7 0 39.6l-152 152c-64 64-167.6 64-231.6 0s-64-167.6 0-231.6l184-184c46.3-46.3 121.3-46.3 167.6 0s46.3 121.3 0 167.6l-176 176c-28.6 28.6-75 28.6-103.6 0s-28.6-75 0-103.6l144-144c10.9-10.9 28.7-10.9 39.6 0s10.9 28.7 0 39.6l-144 144c-6.7 6.7-6.7 17.7 0 24.4s17.7 6.7 24.4 0l176-176c24.4-24.4 24.4-64 0-88.4z" />
+            </svg>
+        </button>
+
+        <button class="menu__item" style="--bgColorItem:#65ddb7;">
+            <a href="#formulario"></a>
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="10" width="10"
+                viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path fill="#ffffff"
+                    d="M168 80c-13.3 0-24 10.7-24 24l0 304c0 8.4-1.4 16.5-4.1 24L440 432c13.3 0 24-10.7 24-24l0-304c0-13.3-10.7-24-24-24L168 80zM72 480c-39.8 0-72-32.2-72-72L0 112C0 98.7 10.7 88 24 88s24 10.7 24 24l0 296c0 13.3 10.7 24 24 24s24-10.7 24-24l0-304c0-39.8 32.2-72 72-72l272 0c39.8 0 72 32.2 72 72l0 304c0 39.8-32.2 72-72 72L72 480zM176 136c0-13.3 10.7-24 24-24l96 0c13.3 0 24 10.7 24 24l0 80c0 13.3-10.7 24-24 24l-96 0c-13.3 0-24-10.7-24-24l0-80zm200-24l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zM200 272l208 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-208 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80l208 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-208 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z" />
+            </svg>
+            </svg>
+        </button>
+
+        <div class="menu__border"></div>
+
+    </menu>
+
+    <section id="home">
+        <div id="midpage">
+            <div id="imagem">
+                <div class="overlay"></div>
+                <video class="video" autoplay muted loop width="120%" height="110%">
+                    <source src="video-portifolio.mp4">
+                </video>
+            </div>
+            <div id="textos">
+                <div id="tituloMidPage">ANDREH MALHEIROS</div>
+                <h6 class="area-1">
+                    Este é o meu <span id="portifolio">portfólio</span> profissional. Aqui você encontrará uma seleção
+                    dos meus
+                    <span>projetos</span> e realizações
+                    mais recentes. Neste portfólio, você poderá explorar meu trabalho na area de T.I. Estou sempre em
+                    busca
+                    de <span>novos desafios</span> e oportunidades para colaborar e crescer profissionalmente.
+                </h6>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="perfil">
+        <div id="perfils">
+
+            <div id="textos2">
+                <div id="midPageTitulo" style="text-decoration: none;">Olá, é um <span> prazer </span>me apresentar!
+                </div>
+                <h4 id="midPageDesc">Meu nome é <span> Andreh Malheiros </span>, e atualmente estou no 2° ano do ensino
+                    médio no Colégio Cotemig. </h4>
+                <h5 id="midPageLegenda">Tenho <span> 17 anos </span> e sou apaixonado por futebol. Sou uma pessoa
+                    empenhada e dedicada, sempre guiado pela
+                    curiosidade e pelo desejo de aprender cada vez mais. Tenho duas irmãs que sempre foram grandes
+                    inspirações para mim. Encontrei minha vocação na área de Tecnologia da Informação (TI) e gosto muito
+                    de <span> estudar e programar </span>. Fui o responsável pelo desenvolvimento deste site, e espero
+                    que ele tenha
+                    agradado.</h5>
+
+            </div>
+
+            <div id="fotoPerfil">
+                <div class="box-blur"></div>
+                <div id="nomeFotoPerfil">Andreh Malheiros</div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contatos">
+        <div id="contacts">
+            <div id="TextEntreEmContato">Entre em <span>contato</span> comigo!</div>
+
+            <div id="Cartoes">
+                <div class="Cards">
+                    <div class="TituloCartoes">Email</div>
+                    <div class="imgCartoes"><svg class="colorSVG" xmlns="http://www.w3.org/2000/svg" height="120"
+                            width="120"
+                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+                        </svg></div>
+                    <div class="botaoCartoes">
+                        <button><a href="mailto:andrehmalheirostiberio@gmail.com?subject=Vim%20do%20Portif%C3%B3lio"
+                                target="_blank"></a>
+                            ACESSE AQUI</button>
+                    </div>
+                </div>
+                <div class="Cards">
+                    <div class="TituloCartoes">Linkedin</div>
+                    <div class="imgCartoes"><svg class="colorSVG" xmlns="http://www.w3.org/2000/svg" height="120"
+                            width="120" viewBox="0 0 448 512">
+                            <path
+                                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+                        </svg>
+                    </div>
+                    <div class="botaoCartoes">
+                        <button><a href="https://www.linkedin.com/in/andreh-malheiros/" target="_blank"></a>ACESSE
+                            AQUI</button>
+                    </div>
+                </div>
+                <div class="Cards">
+                    <div class="TituloCartoes">
+                        Telefone
+                    </div>
+                    <div class="imgCartoes"><svg class="colorSVG" xmlns="http://www.w3.org/2000/svg" height="140"
+                            width="120"
+                            viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                        </svg>
+                    </div>
+                    <div class="botaoCartoes">
+                        <button><a href="https://wa.me/5531999656778" target="_blank"></a>ACESSE AQUI</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="projetos" style="margin-top: 10em;">
+        <div id="projects">
+
+            <div id="conhecimentos">
+                <div class="quadrados">
+                    JAVA SCRIPT
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="70px" width="70px"
+                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M0 32v448h448V32H0zm243.8 349.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="quadrados">
+                    HTML/CSS
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="70px" width="70px"
+                            viewBox="0 0 640 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="quadrados">
+                    C#
+                    <div>
+                        <svg width="70px" height="70px" viewBox="0 0 24.00 24.00" role="img"
+                            xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00024000000000000003">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
+                                stroke="#CCCCCC" stroke-width="0.096"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <title>C Sharp icon</title>
+                                <path
+                                    d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zM9.426 7.12a5.55 5.55 0 011.985.38v1.181a4.5 4.5 0 00-2.25-.566 3.439 3.439 0 00-2.625 1.087 4.099 4.099 0 00-1.012 2.906 3.9 3.9 0 00.945 2.754 3.217 3.217 0 002.482 1.023 4.657 4.657 0 002.464-.634l-.004 1.08a5.543 5.543 0 01-2.625.555 4.211 4.211 0 01-3.228-1.297 4.793 4.793 0 01-1.212-3.409 5.021 5.021 0 011.365-3.663 4.631 4.631 0 013.473-1.392 5.55 5.55 0 01.12-.004 5.55 5.55 0 01.122 0zm5.863.155h.836l-.555 2.652h1.661l.567-2.652h.81l-.555 2.652 1.732-.004-.15.697H17.91l-.412 1.98h1.852l-.176.698h-1.816l-.58 2.625h-.83l.567-2.625h-1.65l-.555 2.625h-.81l.555-2.625h-1.74l.131-.698h1.748l.401-1.976h-1.826l.138-.697h1.826zm.142 3.345L15 12.6h1.673l.423-1.98z">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div id="cardsProjects">
+                <div class="gradient-border">
+                    <div class="ProjectsCards">
+                        Site Delivery
+
+                        <div class="box-size">
+                            <div class="blur-box">
+                                <button><a href="https://andreh-malheiros.github.io/Projeto-Figma/index.html"
+                                        target="_blank"></a></button>
+                            </div>
+                        </div>
+
+                        <div class="TextDescritivoSite">
+                            Site usando display Flex <br> Projeto escolar
+                        </div>
+
+                    </div>
+                </div>
+
+                
+
+                <div class="gradient-border">
+                    <div class="ProjectsCards">
+                        Tabela Periódica
+
+                        <div class="box-size">
+                            <div class="blur-box1">
+                                <button><a href="https://andreh-tabela.netlify.app" target="_blank"></a></button>
+                            </div>
+                        </div>
+
+                        <div class="TextDescritivoSite">
+                            Site usando TD e TR <br> Projeto escolar
+                        </div>
+                    </div>
+                </div>
+                <div class="gradient-border">
+                    <div class="ProjectsCards">
+                        Reprodução Site
+
+                        <div class="box-size">
+                            <div class="blur-box2">
+                                <button><a href="https://andrehmalheiros.github.io/SiteDisplayFlex/"
+                                        target="_blank"></a></button>
+                            </div>
+                        </div>
+
+                        <div class="TextDescritivoSite">
+                            Reprodução de um site usando Display Flex
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="formulario" style="margin-top: 5em;">
+
+
+        <div id="containerForm" class="background-img">
+            <div class="box">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <div class="contact-form">
+                    <h1>Entre em contato comigo!</h1>
+
+                    <form action="https://api.sheetmonkey.io/form/nubMbdqNzDG9Lv2hwpQ6Jz" method="post">
+                        <div class="controls">
+                            <div class="form-group">
+                                <p>Nome Completo</p>
+                                <input type="text" name="name" class="form-control" required="required"
+                                    style="height: 3vh;">
+                            </div>
+
+                            <div class="form-group">
+                                <p>Email</p>
+                                <input type="email" name="email" class=" form-control" required="required"
+                                    style="height: 3vh;">
+                            </div>
+
+                            <div class="form-group">
+                                <p>Estado</p>
+                                <select name="estado" class=" form-control" required="required">
+                                    <option value="" disabled selected>Selecione seu estado</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <p>Mensagem</p>
+                                <textarea name="message" class="form-control" rows="1" required="required"></textarea>
+                            </div>
+
+
+                            <button type="submit" class="btn btn-send send-msg">ENVIAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div id="rodape">
+        <div class="conteudos">
+            <div id="primeira-parte">
+                <div id="PortifolioNameRodape">
+                    <div id="namePortifolio">Portifólio</div>
+                    <div id="textEmail">Fique por dentro das atualizações e progresso do meu portfólio</div>
+                    <form action="https://api.sheetmonkey.io/form/nubMbdqNzDG9Lv2hwpQ6Jz" method="post">
+                        <div class="input-container">
+                            <input type="email" name="email" placeholder="Digite seu E-mail" required>
+                            <button type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                    <path fill="#ffffff"
+                                        d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="segunda-parte">
+                <div id="paginasRodape">
+                    <span>Páginas</span>
+                    <ul class="PaginasList">
+                        <li><a href="#home"></a>Home</li>
+                        <li><a href="#perfil"></a>Perfil</li>
+                        <li><a href="#contatos"></a>Mídias Sociais</li>
+                        <li><a href="#projetos"></a>Projetos</li>
+                        <li><a href="#formulario"></a>Contate-me</li>
+                    </ul>
+                </div>
+                <div id="SociaisRodape">
+                    <span>Sociais</span>
+                    <ul class="PaginasList">
+                        <li><a href="https://www.instagram.com/mtandreh/" target="_blank"></a>Instagram</li>
+                        <li><a href="https://www.linkedin.com/in/andreh-malheiros/" target="_blank"></a>Linkedin</li>
+                        <li><a href="https://github.com/Andreh-Malheiros" target="_blank"></a>Github</li>
+                        <li> <a href="mailto:andrehmalheirostiberio@gmail.com?subject=Vim%20do%20Portif%C3%B3lio"
+                                target="_blank"></a>Email</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="certificados">
+                <div data-iframe-width="190" data-iframe-height="170"
+                    data-share-badge-id="b7545eb9-03ca-4165-80d0-2ddf6c8e6169"
+                    data-share-badge-host="https://www.credly.com"></div>
+                <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
